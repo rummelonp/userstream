@@ -14,9 +14,9 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "userstream"
   gem.homepage = "http://github.com/mitukiii/userstream"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.license = "WTFPL"
+  gem.summary = %Q{Userstream is a simple twitter userstream library.}
+  gem.description = %Q{Userstream is a simple twitter userstream library.}
   gem.email = "mail@mitukiii.jp"
   gem.authors = ["Kazuya Takeshima"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

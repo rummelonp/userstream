@@ -22,4 +22,8 @@ describe Userstream do
       @userstream.user_timeline
     end
   end
+
+  describe :user do
+    pending 'TODO: Should write user specs.'
+  end
 end

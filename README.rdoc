@@ -16,7 +16,7 @@ Userstream is a simple twitter userstream library.
       {site: 'https://userstream.twitter.com/'}
     )
     access_token = OAuth::AccessToken.new(
-      @consumer,
+      consumer,
       '*** oauth token ***',
       '*** oauth token secret ***'
     )

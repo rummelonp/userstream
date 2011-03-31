@@ -26,6 +26,10 @@ Userstream is a simple twitter userstream library.
       # ... do something.
     end
 
+== Requirement
+
+rubytter
+
 == Copyright
 
 Copyright (C) 2011 Kazuya Takeshima

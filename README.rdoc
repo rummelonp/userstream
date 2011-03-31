@@ -29,6 +29,7 @@ Userstream is a simple twitter userstream library.
 == Requirement
 
 rubytter
+hashie
 
 == Copyright
 

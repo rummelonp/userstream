@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{userstream}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Kazuya Takeshima"]
-  s.date = %q{2011-03-31}
+  s.authors = [%q{Kazuya Takeshima}]
+  s.date = %q{2011-07-17}
   s.description = %q{Userstream is a simple twitter userstream library.}
   s.email = %q{mail@mitukiii.jp}
   s.extra_rdoc_files = [
@@ -29,9 +29,9 @@ Gem::Specification.new do |s|
     "userstream.gemspec"
   ]
   s.homepage = %q{http://github.com/mitukiii/userstream}
-  s.licenses = ["WTFPL"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.licenses = [%q{WTFPL}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.1}
   s.summary = %q{Userstream is a simple twitter userstream library.}
   s.test_files = [
     "spec/spec_helper.rb",

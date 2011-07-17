@@ -11,7 +11,7 @@ class Userstream
   def user(params = {}, &block)
     http = create_http
     request = create_signed_request(:post, '/2/user.json', params)
-    proccess(http, request, &block)
+    process(http, request, &block)
   end
 
   def method_missing(method, *args, &block)
@@ -32,7 +32,7 @@ class Userstream
     @consumer.create_signed_request(method, path, @access_token, {}, params, @rubytter.header)
   end
 
-  def proccess(http, request, &block)
+  def process(http, request, &block)
     raise unless block_given?
     http.request(request) do |response|
       response.read_body do |chunk|

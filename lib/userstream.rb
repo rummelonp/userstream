@@ -1,48 +1,22 @@
 # -*- coding: utf-8 -*-
 
 require "userstream/version"
-require "oauth"
-require "json"
-require "hashie"
+require "userstream/config"
+require "userstream/client"
 
 class Userstream
-  attr_accessor :header
+  extend Configuration
 
-  def initialize(access_token, options = {})
-    @access_token = access_token
-    setup(options)
+  def self.client(options = {})
+    Userstream::Client.new(options)
   end
 
-  def setup(options)
-    @header = {'User-Agent' => "Userstream/#{VERSION} (http://github.com/mitukiii/userstream)"}
-    @header.merge!(options[:header]) if options[:header]
+  def self.method_missing(method_name, *args, &block)
+    return super unless client.respond_to?(method_name)
+    client.send(method_name, *args, &block)
   end
 
-  def user(params = {}, &block)
-    http = create_http
-    request = create_signed_request(:post, '/2/user.json', params)
-    process(http, request, &block)
-  end
-
-  private
-  def consumer
-    @access_token.consumer
-  end
-
-  def create_http
-    consumer.send(:create_http)
-  end
-
-  def create_signed_request(method, path, params = {})
-    consumer.create_signed_request(method, path, @access_token, {}, params, @header)
-  end
-
-  def process(http, request, &block)
-    raise ArgumentError, "expected a block" unless block_given?
-    http.request(request) do |response|
-      response.read_body do |chunk|
-        yield Hashie::Mash.new(JSON.parse(chunk)) rescue next
-      end
-    end
+  def self.respond_to?(method_name)
+    return client.respond_to?(method_name) || super
   end
 end

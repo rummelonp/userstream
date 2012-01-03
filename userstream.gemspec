@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_runtime_dependency "oauth"
+  s.add_runtime_dependency("json") if RUBY_VERSION < '1.9'
   s.add_runtime_dependency "hashie"
   s.add_development_dependency "rspec"
 end

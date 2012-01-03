@@ -2,6 +2,7 @@
 
 require "userstream/version"
 require "oauth"
+require "json"
 require "hashie"
 
 class Userstream

@@ -1,14 +1,21 @@
 # -*- coding: utf-8 -*-
 
 require "userstream/version"
-require "rubytter"
+require "oauth"
 require "hashie"
 
 class Userstream
-  def initialize(consumer, access_token)
+  attr_accessor :header
+
+  def initialize(consumer, access_token, options = {})
     @consumer = consumer
     @access_token = access_token
-    @rubytter = OAuthRubytter.new(@access_token)
+    setup(options)
+  end
+
+  def setup(options)
+    @header = {'User-Agent' => "Userstream/#{VERSION} (http://github.com/mitukiii/userstream)"}
+    @header.merge!(options[:header]) if options[:header]
   end
 
   def user(params = {}, &block)
@@ -17,22 +24,13 @@ class Userstream
     process(http, request, &block)
   end
 
-  def method_missing(method, *args, &block)
-    return super unless @rubytter.respond_to?(method)
-    @rubytter.send(method, *args, &block)
-  end
-
-  def respond_to?(method)
-    return @rubytter.respond_to?(method) || super
-  end
-
   private
   def create_http
     @consumer.send(:create_http)
   end
 
   def create_signed_request(method, path, params = {})
-    @consumer.create_signed_request(method, path, @access_token, {}, params, @rubytter.header)
+    @consumer.create_signed_request(method, path, @access_token, {}, params, @header)
   end
 
   def process(http, request, &block)

@@ -14,17 +14,6 @@ describe Userstream do
     it { should be_instance_of Userstream }
   end
 
-  describe 'rubytter methods' do
-    before do
-      @userstream.should_receive(:verify_credentials)
-      @userstream.should_receive(:user_timeline)
-    end
-    it 'should receive ...' do
-      @userstream.verify_credentials
-      @userstream.user_timeline
-    end
-  end
-
   describe :user do
     pending 'TODO: Should write user specs.'
   end

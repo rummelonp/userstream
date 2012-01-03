@@ -1,5 +1,8 @@
-require 'rubytter'
-require 'hashie'
+# -*- coding: utf-8 -*-
+
+require "userstream/version"
+require "rubytter"
+require "hashie"
 
 class Userstream
   def initialize(consumer, access_token)

@@ -8,8 +8,7 @@ require "hashie"
 class Userstream
   attr_accessor :header
 
-  def initialize(consumer, access_token, options = {})
-    @consumer = consumer
+  def initialize(access_token, options = {})
     @access_token = access_token
     setup(options)
   end
@@ -26,12 +25,16 @@ class Userstream
   end
 
   private
+  def consumer
+    @access_token.consumer
+  end
+
   def create_http
-    @consumer.send(:create_http)
+    consumer.send(:create_http)
   end
 
   def create_signed_request(method, path, params = {})
-    @consumer.create_signed_request(method, path, @access_token, {}, params, @header)
+    consumer.create_signed_request(method, path, @access_token, {}, params, @header)
   end
 
   def process(http, request, &block)

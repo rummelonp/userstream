@@ -4,9 +4,9 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe Userstream do
   before do
-    @consumer = OAuth::Consumer.new('consumer key', 'consumer secret')
+    @consumer = OAuth::Consumer.new('consumer key', 'consumer secret', site: 'https://userstream.twitter.com/')
     @access_token = OAuth::AccessToken.new(@consumer, 'oauth token', 'oauth token secret')
-    @userstream = Userstream.new(@consumer, @access_token)
+    @userstream = Userstream.new(@access_token)
   end
 
   describe :new do

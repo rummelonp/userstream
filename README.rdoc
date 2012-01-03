@@ -1,6 +1,6 @@
-= Userstream
+= UserStream
 
-Userstream is a simple twitter userstream library.
+UserStream is a simple twitter userstream library.
 
 == Install
 
@@ -8,28 +8,24 @@ Userstream is a simple twitter userstream library.
 
 == Example
 
-    require 'userstream'
+    require 'user_stream'
     
-    consumer = OAuth::Consumer.new(
-      '*** consumer key ***',
-      '*** consumer secret ***',
-      {site: 'https://userstream.twitter.com/'}
-    )
-    access_token = OAuth::AccessToken.new(
-      consumer,
-      '*** oauth token ***',
-      '*** oauth token secret ***'
-    )
-    
-    userstream = Userstream.new(consumer, access_token)
-    userstream.user do |status|
+    UserStream.configure do |config|
+      config.consumer_key = 'consumer key'
+      config.consumer_secret = 'consumer secret'
+      config.oauth_token = 'oauth token'
+      config.oauth_token_secret = 'oauth token secret'
+    end
+
+    client = UserStream.client
+    client.user do |status|
       # ... do something.
     end
 
 == Requirement
 
-rubytter
-hashie
+    oauth
+    hashie
 
 == Copyright
 

@@ -38,7 +38,7 @@ class Userstream
   end
 
   def process(http, request, &block)
-    raise unless block_given?
+    raise ArgumentError, "expected a block" unless block_given?
     http.request(request) do |response|
       response.read_body do |chunk|
         yield Hashie::Mash.new(JSON.parse(chunk)) rescue next

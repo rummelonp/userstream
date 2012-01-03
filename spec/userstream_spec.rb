@@ -15,6 +15,16 @@ describe Userstream do
   end
 
   describe :user do
-    pending 'TODO: Should write user specs.'
+    context 'not block given' do
+      it do
+        lambda {
+          @userstream.user
+        }.should raise_error(ArgumentError)
+      end
+    end
+
+    context 'block given' do
+      pending 'TODO: Should write user specs.'
+    end
   end
 end

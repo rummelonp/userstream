@@ -2,6 +2,7 @@
 
 require "userstream/version"
 require "userstream/config"
+require "userstream/api"
 require "userstream/client"
 
 class Userstream

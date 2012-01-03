@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-require "userstream/version"
-require "userstream/config"
-require "userstream/api"
-require "userstream/client"
+require "user_stream/version"
+require "user_stream/config"
+require "user_stream/api"
+require "user_stream/client"
 
-class Userstream
+module UserStream
   extend Configuration
 
   def self.client(options = {})
-    Userstream::Client.new(options)
+    UserStream::Client.new(options)
   end
 
   def self.method_missing(method_name, *args, &block)

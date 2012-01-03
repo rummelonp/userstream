@@ -4,12 +4,12 @@ require "oauth"
 require "json"
 require "hashie"
 
-class Userstream
+module UserStream
   class API
     attr_accessor *Configuration::OPTIONS_KEYS
 
     def initialize(options = {})
-      options = Userstream.options.merge(options)
+      options = UserStream.options.merge(options)
       Configuration::OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-class Userstream
+module UserStream
   module Configuration
     OPTIONS_KEYS = [
       :consumer_key,
@@ -17,7 +17,7 @@ class Userstream
     DEFAULT_OAUTH_TOKEN        = nil
     DEFAULT_OAUTH_TOKEN_SECRET = nil
 
-    DEFAULT_USER_AGENT = "Userstream/#{VERSION} (http://github.com/mitukiii/userstream)".freeze
+    DEFAULT_USER_AGENT = "UserStream/#{VERSION} (http://github.com/mitukiii/userstream)".freeze
 
     DEFAULT_ENDPOINT = 'https://userstream.twitter.com/'.freeze
 

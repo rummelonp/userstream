@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-class Userstream
+module UserStream
   VERSION = "0.1.2"
 end

@@ -2,20 +2,20 @@
 
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe Userstream do
+describe UserStream do
   before do
-    Userstream.configure do |config|
+    UserStream.configure do |config|
       config.consumer_key = 'consumer key'
       config.consumer_secret = 'consumer secret'
       config.oauth_token = 'oauth token'
       config.oauth_token_secret = 'oauth token secret'
     end
-    @client = Userstream.client
+    @client = UserStream.client
   end
 
   describe :client do
     subject { @client }
-    it { should be_a Userstream::Client }
+    it { should be_a UserStream::Client }
   end
 
   describe :user do

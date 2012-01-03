@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 
 $:.push File.expand_path("../lib", __FILE__)
-require "userstream/version"
+require "user_stream/version"
 
 Gem::Specification.new do |s|
   s.name        = "userstream"
-  s.version     = Userstream::VERSION
+  s.version     = UserStream::VERSION
   s.authors     = ["Kazuya Takeshima"]
   s.email       = ["mail@mitukiii.jp"]
   s.homepage    = ""
-  s.summary     = %q{Userstream is a simple twitter userstream library.}
-  s.description = %q{Userstream is a simple twitter userstream library.}
+  s.summary     = %q{UserStream is a simple twitter userstream library.}
+  s.description = %q{UserStream is a simple twitter userstream library.}
 
   s.rubyforge_project = "userstream"
 

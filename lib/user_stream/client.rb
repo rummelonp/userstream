@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-class Userstream
+module UserStream
   class Client < API
     def user(params = {}, &block)
       post('/2/user.json', params, &block)

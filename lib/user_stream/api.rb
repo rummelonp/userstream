@@ -6,8 +6,10 @@ require "hashie"
 
 module UserStream
   class API
+    # @private
     attr_accessor *Configuration::OPTIONS_KEYS
 
+    # Creates a new API
     def initialize(options = {})
       options = UserStream.options.merge(options)
       Configuration::OPTIONS_KEYS.each do |key|
@@ -15,14 +17,17 @@ module UserStream
       end
     end
 
+    # Perform an HTTP GET request
     def get(path, params = {}, &block)
       request(:get, path, params, &block)
     end
 
+    # Perform an HTTP POST request
     def post(path, params = {}, &block)
       request(:post, path, params, &block)
     end
 
+    # Perform an HTTP request
     def request(method, path, params = {}, &block)
       token = access_token
       http = token.consumer.http
@@ -30,10 +35,12 @@ module UserStream
       process(http, request, &block)
     end
 
+    # Create a new consumer
     def consumer
       OAuth::Consumer.new(consumer_key, consumer_secret, :site => endpoint)
     end
 
+    # Create a new access token
     def access_token
       OAuth::AccessToken.new(consumer, oauth_token, oauth_token_secret)
     end

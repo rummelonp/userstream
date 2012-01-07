@@ -45,6 +45,7 @@ module UserStream
       OAuth::AccessToken.new(consumer, oauth_token, oauth_token_secret)
     end
 
+    private
     def header
       {'User-Agent' => user_agent}
     end

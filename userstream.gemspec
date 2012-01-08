@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = UserStream::VERSION
   s.authors     = ["Kazuya Takeshima"]
   s.email       = ["mail@mitukiii.jp"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/mitukiii/userstream"
   s.summary     = %q{UserStream is a simple twitter userstream library.}
   s.description = %q{UserStream is a simple twitter userstream library.}
 

@@ -63,6 +63,7 @@ module UserStream
       self.oauth_token_secret = DEFAULT_OAUTH_TOKEN_SECRET
       self.endpoint           = DEFAULT_ENDPOINT
       self.user_agent         = DEFAULT_USER_AGENT
+      self
     end
   end
 end

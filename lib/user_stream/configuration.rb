@@ -32,7 +32,7 @@ module UserStream
     DEFAULT_ENDPOINT = 'https://userstream.twitter.com/'.freeze
 
     # The user agent that will be sent to the API endpoint if none is set
-    DEFAULT_USER_AGENT = "UserStream/#{VERSION} (http://github.com/mitukiii/userstream)".freeze
+    DEFAULT_USER_AGENT = "UserStream/#{VERSION} (https://github.com/mitukiii/userstream)".freeze
 
     # @private
     attr_accessor *OPTIONS_KEYS

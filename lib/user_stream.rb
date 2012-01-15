@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 require "user_stream/version"
+require "user_stream/error"
 require "user_stream/configuration"
 require "user_stream/api"
 require "user_stream/client"

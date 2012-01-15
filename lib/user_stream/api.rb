@@ -52,9 +52,19 @@ module UserStream
 
     def process(http, request, &block)
       raise ArgumentError, "expected a block" unless block_given?
+      buffer = ''
       http.request(request) do |response|
         response.read_body do |chunk|
-          yield Hashie::Mash.new(JSON.parse(chunk)) rescue next
+          buffer += chunk
+          next unless chunk.match(/\r\n$/)
+          begin
+            status = Hashie::Mash.new(JSON.parse(buffer))
+          rescue
+            next
+          ensure
+            buffer = ''
+          end
+          yield status
         end
       end
     end

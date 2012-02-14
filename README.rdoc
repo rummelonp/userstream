@@ -22,6 +22,11 @@ UserStream is a simple twitter userstream library.
       # ... do something.
     end
 
+    # search stream
+    client.search({"track" => "twitter"}) do |status|
+      # ... do something.
+    end
+
 == Requirement
 
     oauth

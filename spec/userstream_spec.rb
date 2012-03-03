@@ -31,4 +31,32 @@ describe UserStream do
       pending 'TODO: Should write user specs.'
     end
   end
+
+  describe :filter do
+    context 'not block given' do
+      it do
+        lambda {
+          @client.filter(:track => 'twitter')
+        }.should raise_error(ArgumentError)
+      end
+    end
+
+    context 'block given' do
+      pending 'TODO: Should write filter specs.'
+    end
+  end
+
+  describe :sample do
+    context 'not block given' do
+      it do
+        lambda {
+          @client.sample
+        }.should raise_error(ArgumentError)
+      end
+    end
+
+    context 'block given' do
+      pending 'TODO: Should write sample specs.'
+    end
+  end
 end

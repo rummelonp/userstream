@@ -16,9 +16,18 @@ UserStream is a simple twitter userstream library.
       config.oauth_token = 'oauth token'
       config.oauth_token_secret = 'oauth token secret'
     end
-
+    
     client = UserStream.client
+    
     client.user do |status|
+      # ... do something.
+    end
+    
+    client.filter(:track => 'twitter') do |status|
+      # ... do something.
+    end
+    
+    client.sample do |status|
       # ... do something.
     end
 

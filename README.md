@@ -1,12 +1,12 @@
-= UserStream
+# UserStream
 
 UserStream is a simple twitter userstream library.
 
-== Install
+## Install
 
     $ gem install userstream
 
-== Example
+## Example
 
     require 'user_stream'
     
@@ -31,11 +31,11 @@ UserStream is a simple twitter userstream library.
       # ... do something.
     end
 
-== Requirement
+## Requirement
 
     oauth
     hashie
 
-== Copyright
+## Copyright
 
 Released under the MIT license: http://www.opensource.org/licenses/MIT

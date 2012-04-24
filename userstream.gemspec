@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_runtime_dependency("oauth", "~> 0.4.5")
-  s.add_runtime_dependency("json", "~> 1.6.4") if RUBY_VERSION < '1.9'
+  s.add_runtime_dependency("oauth", "~> 0.4.6")
+  s.add_runtime_dependency("json", "~> 1.6.6") if RUBY_VERSION < '1.9'
   s.add_runtime_dependency("hashie", "~> 1.2.0")
-  s.add_development_dependency("rspec", "~> 2.8.0")
+  s.add_development_dependency("rspec", "~> 2.9.0")
 end

@@ -29,7 +29,7 @@ module UserStream
     #
     # @note Specify a different API version, or use a Twitter-compatible endpoint.
     # @see https://dev.twitter.com/docs/streaming-api/user-streams
-    DEFAULT_ENDPOINT = 'https://userstream.twitter.com/'.freeze
+    DEFAULT_ENDPOINT = 'https://userstream.twitter.com'.freeze
 
     # The user agent that will be sent to the API endpoint if none is set
     DEFAULT_USER_AGENT = "UserStream/#{VERSION} (https://github.com/mitukiii/userstream)".freeze

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 require "oauth"
-require "json"
+require "yajl"
 require "hashie"
 
 module UserStream
@@ -85,7 +85,7 @@ module UserStream
     end
 
     def parse_chunk(chunk)
-      Hashie::Mash.new(JSON.parse(chunk))
+      Hashie::Mash.new(Yajl.load(chunk))
     end
   end
 end

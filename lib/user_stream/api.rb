@@ -31,13 +31,14 @@ module UserStream
     def request(method, path, params = {}, &block)
       token = access_token
       http = token.consumer.http
+      http.read_timeout = timeout
       request = token.consumer.create_signed_request(method, path, token, {}, params, header)
       process(http, request, &block)
     end
 
     # Create a new consumer
     def consumer
-      OAuth::Consumer.new(consumer_key, consumer_secret, :site => endpoint, :timeout => timeout)
+      OAuth::Consumer.new(consumer_key, consumer_secret, :site => endpoint)
     end
 
     # Create a new access token

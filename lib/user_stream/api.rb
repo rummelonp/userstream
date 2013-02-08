@@ -37,7 +37,7 @@ module UserStream
 
     # Create a new consumer
     def consumer
-      OAuth::Consumer.new(consumer_key, consumer_secret, :site => endpoint, :timeout => 90)
+      OAuth::Consumer.new(consumer_key, consumer_secret, :site => endpoint, :timeout => timeout)
     end
 
     # Create a new access token

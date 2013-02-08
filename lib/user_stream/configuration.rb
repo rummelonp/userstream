@@ -11,6 +11,7 @@ module UserStream
       :oauth_token_secret,
       :endpoint,
       :user_agent,
+      :timeout,
     ].freeze
 
     # By default, don't set a consumer key
@@ -33,6 +34,11 @@ module UserStream
 
     # The user agent that will be sent to the API endpoint if none is set
     DEFAULT_USER_AGENT = "UserStream/#{VERSION} (https://github.com/mitukiii/userstream)".freeze
+
+    # The timeout that will be to used to connect if none is set
+    #
+    # @see https://dev.twitter.com/docs/streaming-apis/connecting#Stalls
+    DEFAULT_TIMEOUT = 90
 
     # @private
     attr_accessor *OPTIONS_KEYS
@@ -63,6 +69,7 @@ module UserStream
       self.oauth_token_secret = DEFAULT_OAUTH_TOKEN_SECRET
       self.endpoint           = DEFAULT_ENDPOINT
       self.user_agent         = DEFAULT_USER_AGENT
+      self.timeout            = DEFAULT_TIMEOUT
       self
     end
   end

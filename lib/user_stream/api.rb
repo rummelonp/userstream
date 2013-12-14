@@ -48,7 +48,10 @@ module UserStream
 
     private
     def header
-      {'User-Agent' => user_agent}
+      {
+        'Accept-Encoding' => 'identity',
+        'User-Agent' => user_agent,
+      }
     end
 
     def process(http, request, &block)
